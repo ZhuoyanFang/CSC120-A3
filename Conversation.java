@@ -1,3 +1,7 @@
+/**
+ * The Conversation class uses a chatbot that records user inputs and outputs as a transcript and can run many rounds deciding by the user when doing interaction.
+ * This class uses the ConversationRequirements interface.
+ */
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Random;
@@ -9,8 +13,7 @@ class Conversation implements ConversationRequirements {
 
   /**
    * Constructor 
-   * @param transcript it is the whole records of all inputs and outputs
-   * @param position record where we are in the transcript
+   * It initializes the transcript, which is the whole records of all inputs and outputs, and the positions record where we are in the transcript.
    */
   Conversation() {
     transcript = new ArrayList<String>(); 
@@ -19,11 +22,7 @@ class Conversation implements ConversationRequirements {
 
   /**
    * Starts and runs the conversation with the user
-   * @param round record the chatting rounds
-   * @param greeting the greeting from the chatbot
-   * @param inputString the reaction we give to the chatbot
-   * @param reply the reply for the inputString
-   * @param goodbye the goodbye after the conversation
+   * It does the chatting rounds, the greeting from the chatbot, the reaction we give to the chatbot, the reply for the inputString and the goodbye the goodbye after the conversation.
    */
   public void chat() {
     Scanner input=new Scanner(System.in);
@@ -59,7 +58,6 @@ class Conversation implements ConversationRequirements {
 
   /**
    * Prints transcript of conversation
-   * @param transcript the whole records of all inputs and outputs
    */
   public void printTranscript() {
     System.out.println();
@@ -73,9 +71,6 @@ class Conversation implements ConversationRequirements {
   /**
    * Gives appropriate response (mirrored or canned) to user input
    * @param inputString the users last line of input
-   * @param lastWord the last word of the whole sentence
-   * @param words each word in the input sentence
-   * @param mirrored whether there are pronouns that we need to mirror in the sentences
    * @return mirrored or canned response to user input  
    */
   public String respond(String inputString) {
@@ -130,6 +125,11 @@ class Conversation implements ConversationRequirements {
     return returnString; 
   }
 
+
+   /**
+     * It runs the program by creating a conversation, running the chat, and then printing the transcript.
+     * @param arguments the arguments
+     */
   public static void main(String[] arguments) {
 
     Conversation myConversation = new Conversation();
