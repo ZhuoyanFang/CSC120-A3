@@ -1,6 +1,5 @@
 /**
  * The Conversation class uses a chatbot that records user inputs and outputs as a transcript and can run many rounds deciding by the user when doing interaction.
- * This class uses the ConversationRequirements interface.
  */
 import java.util.Scanner;
 import java.util.ArrayList;
